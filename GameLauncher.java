@@ -3,6 +3,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Optional;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 
 /**
  * Console Game Hub.
@@ -95,8 +98,19 @@ public class GameLauncher {
      */
     protected void run() {
         boolean running = true;
+     /**
+      * Adds ASCII art from text file in art folder
+      * Done with exception handling in case file is deleted.
+      */
+        String art = "";
+        try {
+                art = Files.readString(Path.of("art/art.txt"));
+        } catch (IOException e) {
+                System.out.println("Error loading ASCII art: "
+                                + e.getMessage());
+        }
         while (running) {
-            System.out.println("\n=== Console Arcade Hub ===");
+            System.out.println(art);
             for (int i = 0; i < this.games.size(); i++) {
                 System.out.printf("%d. %s\n",
                                   i + 1,
