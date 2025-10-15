@@ -18,7 +18,11 @@ class MasterMindGame implements Game {
 
     @Override
     public Optional<Integer> play() {
-        System.out.println("[Playing MasterMind - Placeholder]");
+        System.out.println("Welcome to Mastermind"
+                + "\nThe goal is to guess the Code Maker mind, "
+                + "\nTIn the fewest attempts."
+                + "\nTEach attempt the Code Maker will provide hints,"
+                + "\nTTo get you one step closer to brake the CODE!");
         return Optional.empty();
     }
 }
